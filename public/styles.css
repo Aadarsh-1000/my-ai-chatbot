@@ -1,0 +1,23 @@
+h1{
+ justify-self: center;
+ font-family: Libre Baskerville;
+}
+#input{
+    position: fixed;
+    bottom: 20px;
+    padding: 10px  12px;
+    border-radius: 15px;
+    border: 2px solid black;
+    font-family: Libre Baskerville;
+   
+}
+
+#input:hover{
+    padding:  12px 14px;
+    transition-duration: 100ms ;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
