@@ -25,11 +25,15 @@ export default async function handler(req, res){
     );
    
     const data =await ai.json();
+    console.log(data);
       res.json({
     reply: data.candidates[0].content.parts[0].text
   });
 }
- catch(error) {
+catch(error) {
+
+   console.log("FULL ERROR:");
+   console.log(error);
 
    console.log(error);
    console.log(error.message);
