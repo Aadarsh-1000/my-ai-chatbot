@@ -29,8 +29,8 @@ export default async function handler(req, res) {
     console.log(data);
 
     res.json({
-      reply:
-        data.candidates?.[0]?.content?.parts?.[0]?.text
+    reply:
+  data.candidates[0].content.parts[0].text
         || "No response"
     });
 
