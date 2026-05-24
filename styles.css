@@ -2,10 +2,34 @@ h1{
  justify-self: center;
  font-family: Libre Baskerville;
 }
+.usermsg{
+    align-self:flex-end;
+    max-width:70%;
+    background:#1f1f1f;
+    color:white;
+    padding:12px 16px;
+    border-radius:18px 18px 4px 18px;
+    font-family:Poppins;
+}
+
+.aimsg{
+    align-self:flex-start;
+    max-width:70%;
+    background:white;
+    color:black;
+    padding:12px 16px;
+    border-radius:18px 18px 18px 4px;
+    border:1px solid #ddd;
+    font-family:Poppins;
+}
 /* From Uiverse.io by vinodjangid07 */ 
 .messageBox {
   width: fit-content;
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-self: center;
+  align-items: center;
   bottom: 20px;
   height: 40px;
   display: flex;
