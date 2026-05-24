@@ -2,8 +2,7 @@ async function send(){
    const input = document.getElementById("messageInput");
      const message = input.value
      const chat = document.getElementById("chat");
-
-  
+     
      chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
 `;
@@ -23,8 +22,6 @@ async function send(){
   })
 });
 
-
-
 const data = await response.json();
 
 chat.innerHTML += `
@@ -32,14 +29,19 @@ chat.innerHTML += `
 `;
   window.scrollTo({
    top: document.body.scrollHeight,
+   
    behavior: "smooth"
 });
 
-     document.getElementById("messageInput")
-     .addEventListener("keydown", function(event){
-
-      if(event.key === "Enter")
-      send();
-      })
-
 }
+
+
+
+document.getElementById("messageInput")
+.addEventListener("keydown", function(event){
+
+   if(event.key === "Enter"){
+      send();
+   }
+
+});
