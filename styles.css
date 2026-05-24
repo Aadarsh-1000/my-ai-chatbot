@@ -149,9 +149,9 @@ body{
 .chat{
     width:min(800px,90%);
     display:flex;
-    flex-direction:column;
+    flex-direction:column;  
     gap:12px;
 
-    margin-top:30px;
+    margin-top: 30px;
     margin-bottom:100px;
 }

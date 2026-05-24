@@ -13,9 +13,13 @@ async function send(){
 });
 
 
+chat.innerHTML += `
+<div class="usermsg"><b>You:</b> ${message}</div>
+`;
+
 const data = await response.json();
-document.getElementById("chat").innerHTML += `
-  <div class="usermsg"><b>You:</b> ${message}</div>
-  <div class="aimsg"><b>AI:</b> ${data.reply}</div>
+
+chat.innerHTML += `
+<div class="aimsg"><b>AI:</b> ${data.reply}</div>
 `;
 }
