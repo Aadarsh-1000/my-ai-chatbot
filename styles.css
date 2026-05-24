@@ -2,7 +2,8 @@ h1 {
     margin: 40px;
     font-family: "DM Serif Display";
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(50%);
+
 
 }
 
@@ -186,7 +187,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 
