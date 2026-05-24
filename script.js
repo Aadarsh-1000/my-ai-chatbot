@@ -39,7 +39,7 @@ chat.innerHTML += `
 
 document.getElementById("messageInput")
 .addEventListener("keydown", function(event){
-
+    event.preventDefault();
    if(event.key === "Enter"){
       send();
    }
