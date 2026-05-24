@@ -15,6 +15,9 @@ h1{
     box-sizing:border-box;
     align-self:flex-end;
     text-align:right;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    white-space:pre-wrap;
 
 }
 
@@ -38,6 +41,9 @@ h1{
     box-sizing:border-box;
     align-self:flex-start;
     text-align:left;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    white-space:pre-wrap;
 }
 /* From Uiverse.io by vinodjangid07 */ 
 .messageBox {
