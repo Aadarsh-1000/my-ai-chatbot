@@ -1,6 +1,7 @@
 async function send(){
    const input = document.getElementById("messageInput");
-     const message = input.value
+     const message = input.value.trim()
+     if(!message) return;
      const chat = document.getElementById("chat");
      
      chat.innerHTML += `
@@ -40,9 +41,9 @@ chat.innerHTML += `
 document.getElementById("messageInput")
 .addEventListener("keydown", function(event){
  
-   if(event.key === "Enter"){
+   if(event.key === "Enter" && !event.shiftKey){
        event.preventDefault();
-      send();
+      document.getElementById("sendButton").click();
    }
 
 });
