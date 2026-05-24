@@ -4,7 +4,7 @@ async function send(){
      const chat = document.getElementById("chat");
   
      chat.innerHTML += `
-<div class="usermsg"><b>You:</b> ${message}</div>
+<div class="usermsg"> ${message}</div>
 `;
    input.value = "";
      const response = await fetch("/api/chat", {
@@ -23,6 +23,6 @@ async function send(){
 const data = await response.json();
 
 chat.innerHTML += `
-<div class="aimsg"><b>AI:</b> ${data.reply}</div>
+<div class="aimsg"> ${data.reply}</div>
 `;
 }
