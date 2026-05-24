@@ -38,10 +38,9 @@ chat.innerHTML += `
 
 
 
-document.getElementById("messageInput")
-.addEventListener("keydown", function(event){
+document.addEventListener("keydown", function(event){
  
-   if(event.key === "Enter" && !event.shiftKey){
+   if(event.target.id === "messageInput" && event.key === "Enter" && !event.shiftKey){
        event.preventDefault();
       document.getElementById("sendButton").click();
    }
