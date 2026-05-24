@@ -26,4 +26,5 @@ const data = await response.json();
 chat.innerHTML += `
 <div class="aimsg"> ${data.reply}</div>
 `;
+  chat.scrollTop = chat.scrollHeight;
 }
