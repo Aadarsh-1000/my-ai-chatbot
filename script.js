@@ -1,5 +1,5 @@
 async function send(){
-    const input = document.getElementById('input')
+   const input = document.getElementById("messageInput");
      const message = input.value
      const response = await fetch("/api/chat", {
         headers: {
