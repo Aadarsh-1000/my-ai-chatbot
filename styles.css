@@ -1,6 +1,8 @@
 h1 {
     margin: 40px;
     font-family: "DM Serif Display";
+    left: 50%;
+    transform: translateX(-50%);
 
 }
 
