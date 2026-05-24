@@ -4,6 +4,8 @@ h1{
 }
 .usermsg{
     align-self:flex-end;
+    position: fixed;
+    right: 10%;
     max-width:70%;
     background:#1f1f1f;
     color:white;
