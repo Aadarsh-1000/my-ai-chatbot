@@ -47,12 +47,13 @@ h1{
   transform: translateX(-50%);
   justify-self: center;
   align-items: center;
+  z-index: 100;
   bottom: 20px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffffb6;
+  background-color: #ffffff;
   padding: 0 15px;
   border-radius: 10px;
   border: 1px solid rgb(63, 63, 63);
