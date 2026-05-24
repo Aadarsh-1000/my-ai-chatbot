@@ -4,11 +4,10 @@ h1{
  
 }
 .usermsg{
-    width: fit-content;
+    width: 95%;
     background:#e8e6ee;
     color:black;
-    max-width: 95%;
-    padding:22px;
+    padding:10px 12px;
     font-family: "poppins";
     border-radius:16px;
     font-size:15px;
@@ -18,6 +17,10 @@ h1{
 
 .aimsg{
     width:95%;
+   
+    
+    padding:10px 12px;
+    font-family: "poppins";
     background:linear-gradient(
         90deg,
         #232334,
@@ -25,9 +28,9 @@ h1{
     );
     
     color:white;
-    padding:22px;
+ 
     border-radius:22px;
-    font-size:22px;
+   
     box-sizing:border-box;
     margin-left:auto;
     margin-right:auto;
