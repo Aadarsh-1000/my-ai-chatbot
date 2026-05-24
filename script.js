@@ -1,5 +1,8 @@
 async function send(){
    const input = document.getElementById("messageInput");
+   chat.innerHTML += `
+<div class="usermsg"><b>You:</b> ${message}</div>
+`;
      const message = input.value
      const response = await fetch("/api/chat", {
         headers: {
@@ -13,9 +16,6 @@ async function send(){
 });
 
 
-chat.innerHTML += `
-<div class="usermsg"><b>You:</b> ${message}</div>
-`;
 
 const data = await response.json();
 
