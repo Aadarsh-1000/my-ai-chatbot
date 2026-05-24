@@ -15,7 +15,7 @@ h1{
     box-sizing:border-box;
     align-self:flex-end;
     text-align:right;
-    overflow-wrap:anywhere;
+    overflow-wrap: anywhere;
     word-break:break-word;
     white-space:pre-wrap;
 

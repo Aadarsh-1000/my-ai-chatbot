@@ -6,6 +6,7 @@ async function send(){
      chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
 `;
+  chat.scrollTop = chat.scrollHeight;
    input.value = "";
      const response = await fetch("/api/chat", {
         headers: {
