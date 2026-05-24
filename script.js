@@ -2,6 +2,14 @@ async function send(){
    const input = document.getElementById("messageInput");
      const message = input.value
      const chat = document.getElementById("chat");
+
+     document.getElementById("messageInput")
+     addEventListener("keydown", function(event){
+
+      if(event.key === "Enter")
+      send();
+      })
+
   
      chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
