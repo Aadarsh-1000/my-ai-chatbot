@@ -6,7 +6,10 @@ async function send(){
      chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
 `;
-  chat.scrollTop = chat.scrollHeight;
+  window.scrollTo({
+   top: document.body.scrollHeight,
+   behavior: "smooth"
+});
    input.value = "";
      const response = await fetch("/api/chat", {
         headers: {
@@ -26,5 +29,8 @@ const data = await response.json();
 chat.innerHTML += `
 <div class="aimsg"> ${data.reply}</div>
 `;
-  chat.scrollTop = chat.scrollHeight;
+  window.scrollTo({
+   top: document.body.scrollHeight,
+   behavior: "smooth"
+});
 }
