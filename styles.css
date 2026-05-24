@@ -1,5 +1,5 @@
 h1{
- justify-self: center;
+ margin: 40px;
  font-family: Libre Baskerville;
 }
 .usermsg{
@@ -131,7 +131,7 @@ h1{
   transition: all 0.3s;
 }
 #sendButton svg path {
-  transition: all 0.3s;
+  transition: all 0.3s;height: 1px;
 }
 #sendButton:hover svg path {
   fill: #3c3c3c;
@@ -139,7 +139,17 @@ h1{
 }
 
 body{
-    align-items: center;
-    justify-content: center;
-    display: flex;
+   align-items: center;
+   background-color: #f4f4f4;
+   display: flex;
+   flex-direction: column;
+}
+.chat{
+    width:min(800px,90%);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+    margin-top:30px;
+    margin-bottom:100px;
 }
