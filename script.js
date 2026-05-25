@@ -36,7 +36,7 @@ async function handleCredentialResponse(response) {
     localStorage.setItem("user", JSON.stringify(data.user));
      if (data.success){
     console.log("login-suucess")
-    window.getElementById("google-login").style.display= "none";
+    document.getElementById("google-login").style.display= "none";
  }
 
 }
