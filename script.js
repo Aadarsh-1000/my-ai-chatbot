@@ -88,9 +88,8 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-document
-.getElementById("logout")
-.addEventListener("click", logout);
+
+
  function logout(){
     localStorage.removeItem("user");
     window.location.reload();
