@@ -67,6 +67,11 @@ async function send() {
 
     const data = await response.json();
 
+    
+ if (data.success){
+    console.log("login-suucess")
+    window.getElementById("google-login").style.display= "none";
+ }
     chat.innerHTML += `
 <div class="aimsg"> ${data.reply}</div>
 `;
