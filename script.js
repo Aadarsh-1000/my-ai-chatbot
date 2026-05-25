@@ -34,6 +34,10 @@ async function handleCredentialResponse(response) {
     console.log(data);
 
     localStorage.setItem("user", JSON.stringify(data.user));
+     if (data.success){
+    console.log("login-suucess")
+    window.getElementById("google-login").style.display= "none";
+ }
 
 }
 const user = JSON.parse(localStorage.getItem("user"));
@@ -68,10 +72,7 @@ async function send() {
     const data = await response.json();
 
     
- if (data.success){
-    console.log("login-suucess")
-    window.getElementById("google-login").style.display= "none";
- }
+
     chat.innerHTML += `
 <div class="aimsg"> ${data.reply}</div>
 `;
