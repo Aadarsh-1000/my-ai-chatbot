@@ -1,3 +1,44 @@
+window.onload = function () {
+
+google.accounts.id.initialize({
+    client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
+    callback: handleCredentialResponse
+});
+
+google.accounts.id.renderButton(
+    document.getElementById("google-login"),
+    {
+        theme: "outline",
+        size: "large"
+    }
+);
+
+};
+
+
+
+async function handleCredentialResponse(response){
+
+    const res = await fetch("/api/auth", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            token: response.credential
+        })
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+}
+
+
+
 async function send(){
    const input = document.getElementById("messageInput");
      const message = input.value.trim()
