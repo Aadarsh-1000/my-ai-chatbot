@@ -2,18 +2,14 @@ import "dotenv/config";
 
 import { ChatGroq } from "@langchain/groq";
 
-import {
-RunnableWithMessageHistory
-}
+import { RunnableWithMessageHistory }
 from "@langchain/core/runnables";
 
-import {
-HumanMessage
-}
+import { HumanMessage }
 from "@langchain/core/messages";
 
-import { ChatMessageHistory }
-from "langchain/stores/message/in_memory";
+import { InMemoryChatMessageHistory }
+from "@langchain/core/chat_history";
 
 const memoryStore = {};
 
@@ -22,7 +18,7 @@ function getSessionHistory(sessionId){
 if(!memoryStore[sessionId]){
 
 memoryStore[sessionId] =
-new ChatMessageHistory();
+new InMemoryChatMessageHistory();
 
 }
 
@@ -54,7 +50,7 @@ inputMessagesKey: "input"
 
 });
 
-export default async function handler(req, res){
+export default async function handler(req,res){
 
 try{
 
@@ -70,7 +66,7 @@ new HumanMessage(message)
 
 {
 configurable: {
-sessionId: conversationId
+sessionId: conversationId || "default"
 }
 }
 
@@ -86,11 +82,12 @@ reply: response.content
 
 catch(error){
 
-console.log("FULL ERROR:");
 console.log(error);
 
 res.status(500).json({
-reply: "Backend crashed"
+
+reply: error.message
+
 });
 
 }
