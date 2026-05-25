@@ -93,6 +93,6 @@ document.addEventListener("keydown", function (event) {
  function logout(){
     localStorage.removeItem("user");
     window.location.reload();
-    console.log("ur logged out suckar!!!")
+    window.alert("your logged out!!")
 
  }
