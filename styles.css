@@ -8,6 +8,22 @@ h1 {
     left: 20px;
     border-radius: 25px;
 }
+#logout{
+    position: fixed;
+    bottom: 70px;
+    width: 200px;
+    left: 20px;
+    border-radius: 50px;
+    border: 0.5px solid rgba(128, 125, 125, 0.372);
+    background-color: #ffffff;
+    font-family: poppins;
+    padding: 10px 12px;
+    
+}
+#logout:hover{
+  transition-duration: 100ms ;
+  background-color: rgba(81, 0, 255, 0.059);
+}
 
 .usermsg {
     width: fit-content;

@@ -46,3 +46,10 @@ document.getElementById("google-login"),
    width: 260
 }
 );
+document.getElementById("logout");
+document.addEventListener("click", logout);
+ function logout(){
+    localStorage.removeItem("user");
+    window.location.reload();
+
+ }
