@@ -37,20 +37,4 @@ export default async function handler(req, res){
 
     }
 
-}google.accounts.id.renderButton(
-document.getElementById("google-login"),
-{
-   theme: "filled_black",
-   size: "large",
-   shape: "pill",
-   width: 260
 }
-);
-document.getElementById("logout");
-document.addEventListener("click", logout);
- function logout(){
-    localStorage.removeItem("user");
-    window.location.reload();
-    console.log("ur logged out suckar!!!")
-
- }
