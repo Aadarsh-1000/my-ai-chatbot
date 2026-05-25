@@ -1,3 +1,5 @@
+const logoutBtn=document.getElementById("logout")
+const googleLogin=document.getElementById("google-login")
 window.onload = function () {
 
     google.accounts.id.initialize({
@@ -98,7 +100,11 @@ document.addEventListener("keydown", function (event) {
 
  function logout(){
     localStorage.removeItem("user");
-    window.location.reload();
-    window.alert("your logged out!!")
+  
+ 
+    logoutBtn.hidden = true;
+
+googleLogin.hidden = false;
+  window.location.reload();
 
  }
