@@ -36,6 +36,13 @@ async function handleCredentialResponse(response){
     localStorage.setItem("user", JSON.stringify(data.user));
 
 }
+const user = JSON.parse(localStorage.getItem("user"));
+
+chat.innerHTML += `
+<div class="aimsg">
+Welcome ${user.name}
+</div>
+`;
 
 
 
