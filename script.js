@@ -38,11 +38,7 @@ async function handleCredentialResponse(response) {
 }
 const user = JSON.parse(localStorage.getItem("user"));
 
-chat.innerHTML += `
-<div class="aimsg">
-Welcome ${user.name}
-</div>
-`;
+
 
 async function send() {
     const input = document.getElementById("messageInput");
