@@ -15,8 +15,6 @@ google.accounts.id.renderButton(
 
 };
 
-
-
 async function handleCredentialResponse(response){
 
     const res = await fetch("/api/auth", {
