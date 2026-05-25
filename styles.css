@@ -6,6 +6,7 @@ h1 {
     position: fixed;
     bottom: 20px;
     left: 20px;
+    border-radius: 25px;
 }
 
 .usermsg {
