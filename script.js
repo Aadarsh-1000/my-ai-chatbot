@@ -6,6 +6,7 @@ window.onload = function () {
         document.getElementById("google-login").style.display="none";
        
         document.getElementById("logout").style.display="block";
+
     }
      else{
        
@@ -15,7 +16,8 @@ window.onload = function () {
     google.accounts.id.initialize({
         client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
         callback: handleCredentialResponse,
-        auto_select: false
+        auto_select: false,
+           cancel_on_tap_outside: true
     });
 
    google.accounts.id.renderButton(
@@ -113,7 +115,8 @@ document.addEventListener("keydown", function (event) {
 
  function logout(){
     localStorage.removeItem("user");
-  
+     google.accounts.id.disableAutoSelect();
+         google.accounts.id.cancel();
  document.getElementById("logout").style.display="block"
  
 document.getElementById("google-login").style.display="none"
