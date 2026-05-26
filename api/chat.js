@@ -1,6 +1,6 @@
 import "dotenv/config";
 import "dotenv/config";
-const mode = document.getElementById("modes").value;
+
 export default async function handler(req, res){
   const {message, mode} =  req.body 
   let systemPrompt = "";
