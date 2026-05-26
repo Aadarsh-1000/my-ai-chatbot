@@ -76,7 +76,7 @@ if (!user)
     const input = document.getElementById("messageInput");
     const message = input.value.trim()
     if (!message) return;
-    const chat = document.getElementById("chat");
+    
 
     chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
