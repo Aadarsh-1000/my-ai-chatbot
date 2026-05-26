@@ -1,6 +1,7 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("google-login")
 window.onload = function () {
+    const user = JSON.parse(localStorage.getItem("user"));
 
     if (user){
         document.getElementById("google-login").style.display="none";
