@@ -6,6 +6,8 @@ window.onload = function () {
         document.getElementById("google-login").style.display="none";
        
         document.getElementById("logout").style.display="block";
+         document.getElementById("logout").style.position="fixed";
+         document.getElementById("logout").style.bottom="20px";
     }
      else{
        
@@ -46,9 +48,10 @@ async function handleCredentialResponse(response) {
     console.log(data);
 
     localStorage.setItem("user", JSON.stringify(data.user));
-     if (data.success){
-    window.alert("yoou suck")
-    document.getElementById("google-login").style.display= "none";
+      if (data.success){
+       window.alert("yoou suck")
+       document.getElementById("google-login").style.display= "none";
+
     document.getElementById("logout").style.display="block";
  }
 
