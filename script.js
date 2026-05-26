@@ -2,6 +2,13 @@ const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("google-login")
 window.onload = function () {
 
+    if (user){
+        document.getElementById("login").style.display="none";
+        logoutBtn.hidden="false";
+    }
+     else{
+        logoutBtn.hidden="true";
+     }
     google.accounts.id.initialize({
         client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
         callback: handleCredentialResponse
@@ -39,6 +46,7 @@ async function handleCredentialResponse(response) {
      if (data.success){
     console.log("login-suucess")
     document.getElementById("google-login").style.display= "none";
+    document.getElementById("logout").style.display="none";
  }
 
 }
