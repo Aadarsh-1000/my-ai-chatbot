@@ -66,7 +66,7 @@ async function send() {
    
     const user = JSON.parse(localStorage.getItem("user"));
 
-    const chat = document.getElementById("chat");
+     const chat = document.getElementById("chat");
 if (!user){
 
        
