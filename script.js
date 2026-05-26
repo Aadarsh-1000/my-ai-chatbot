@@ -48,7 +48,7 @@ async function handleCredentialResponse(response) {
      if (data.success){
     console.log("login-suucess")
     document.getElementById("google-login").style.display= "none";
-    document.getElementById("logout").style.display="none";
+    document.getElementById("logout").style.display="block";
  }
 
 }
