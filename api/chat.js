@@ -1,8 +1,7 @@
-  import "dotenv/config";
-  import {ChatGroq} from "langchain/groq";
-  import {BufferMemory} from "langchain/memory";
-  import {ConversationChain } from "langchain/chains"
-
+import "dotenv/config";
+import { ChatGroq } from "@langchain/groq";
+import { BufferMemory } from "langchain/memory";
+import { ConversationChain } from "langchain/chains";
 
   const memoryStore={};
 
