@@ -8,6 +8,7 @@ window.onload = function () {
         document.getElementById("logout").style.display="block";
          document.getElementById("logout").style.position="fixed";
          document.getElementById("logout").style.bottom="20px";
+         document.getElementById("logout").style.zIndex="-1";
     }
      else{
        
