@@ -1,5 +1,7 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("google-login")
+const mode=document.getElementById("modes")
+const selectedMode = document.getElementById("modes").value;
 window.onload = function () {
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -12,12 +14,12 @@ window.onload = function () {
      else{
        
         document.getElementById("logout").style.display="none";
-        document.getElementById("google-login").style.display="block";
+          document.getElementById("google-login").style.display="block";
      }
     google.accounts.id.initialize({
-        client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
+          client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
         callback: handleCredentialResponse,
-        auto_select: false,
+         auto_select: false,
            cancel_on_tap_outside: true
     });
 
@@ -95,8 +97,9 @@ if (!user){
 
         method: "POST",
         body: JSON.stringify({
-            message
-        })
+    message,
+    mode: selectedMode
+})
     });
 
     const data = await response.json();

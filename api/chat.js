@@ -1,7 +1,8 @@
 import "dotenv/config";
 import "dotenv/config";
+const mode = document.getElementById("modes").value;
 export default async function handler(req, res){
-  const {message} =  req.body 
+  const {message, mode} =  req.body 
   try{
 
   const ai = await fetch(
@@ -16,6 +17,11 @@ export default async function handler(req, res){
   model: "llama-3.3-70b-versatile",
 
   messages: [
+    {
+      role: "system",
+      content: systemPrompt
+    }
+    ,
     {
       role: "user",
       content: message
@@ -40,5 +46,60 @@ catch(error) {
 
    
   }
+
+}
+
+ if (mode === "genz"){
+    systemPrompt = `
+      You are Zoe AI speaking like Gen Z.
+
+    Rules:
+    - casual tone
+    - funny
+    - slightly chaotic
+    - use slang naturally
+    - use emojis sometimes
+    - keep replies short
+    - never sound formal
+    `;
+
+    
+ }
+ else if(mode === "mentor"){
+    systemPrompt = `
+     You are Zoe AI acting as a smart mentor.
+
+    Rules:
+    - helpful
+    - intelligent
+    - encouraging
+    - practical advice
+    - clear explanations
+
+    `;
+
+ }
+ else if (mode === "roast") {
+
+    systemPrompt = `
+    You are Zoe AI in roast mode.
+
+    Rules:
+    - playful insults
+    - funny
+    - never hateful
+    - keep it entertaining
+    `;
+}
+else {
+
+    systemPrompt = `
+    You are Zoe AI.
+
+    Rules:
+    - helpful
+    - friendly
+    - concise
+    `;
 }
   
