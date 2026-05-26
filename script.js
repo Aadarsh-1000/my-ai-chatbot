@@ -72,7 +72,6 @@ if (!user)
 
         chat.innerHTML += `<div class=aimsg> Please login to use Zoe AI</div>`
         return;
-    }
     
     const input = document.getElementById("messageInput");
     const message = input.value.trim()
