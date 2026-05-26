@@ -50,7 +50,7 @@ async function handleCredentialResponse(response) {
 
     localStorage.setItem("user", JSON.stringify(data.user));
       if (data.success){
-       window.alert("you snooze you lose suckar!!")
+      
        document.getElementById("google-login").style.display= "none";
 
     document.getElementById("logout").style.display="block";
