@@ -1,49 +1,63 @@
 import "dotenv/config";
+
 import { ChatGroq } from "@langchain/groq";
-import { BufferMemory } from "langchain/memory";
-import { ConversationChain } from "langchain/chains";
 
-  const memoryStore={};
+import {
+  HumanMessage,
+  AIMessage
+} from "@langchain/core/messages";
 
-  export default async function handler(req, res){
+const memoryStore = {};
 
-    try{
+export default async function handler(req, res) {
 
-  const {message, userId}= req.body;
-  if (!memoryStore[userId]){
-    memoryStore[userId] = new BufferMemory({
-  returnMessages: true,
-  memoryKey:  "history"
+  try {
 
+    const { message, userId } = req.body;
+
+    // create user memory
+    if (!memoryStore[userId]) {
+      memoryStore[userId] = [];
+    }
+
+    // get conversation history
+    const history = memoryStore[userId];
+
+    // add user message
+    history.push(
+      new HumanMessage(message)
+    );
+
+    // create model
+    const model = new ChatGroq({
+      apiKey: process.env.GROQ_API_KEY,
+      model: "llama-3.3-70b-versatile",
+      temperature: 0.1
+    });
+
+    // invoke model with history
+    const result = await model.invoke(history);
+
+    // save ai response
+    history.push(
+      new AIMessage(result.content)
+    );
+
+    // send response
+    res.status(200).json({
+      reply: result.content
     });
 
   }
 
-  const model = new ChatGroq({
-    apiKey: process.env.GROQ_API_KEY,
-    model: "llama-3.3-70b-versatile",
-    temperature: 0.1
-  });
-    const chain = new ConversationChain({
-        llm: model,
-        memory: memoryStore[userId]
-      });
-  const result = await chain.call({
-    input: message
-  });
+  catch (error) {
 
-  result.response
-  res.json({
-    reply: result.response
-  });
+    console.log("FULL ERROR:", error);
 
-
+    res.status(500).json({
+      reply: "Something went wrong"
+    });
 
   }
-  catch(error) {
 
-    console.log("FULL ERROR:");
-
-    }
-  }
-    
+}
