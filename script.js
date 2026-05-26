@@ -112,10 +112,10 @@ document.addEventListener("keydown", function (event) {
  function logout(){
     localStorage.removeItem("user");
   
+ document.getElementById("logout").style.display="block"
  
-    logoutBtn.hidden = true;
+document.getElementById("google-login").style.display="none"
 
-googleLogin.hidden = false;
   window.location.reload();
 
  }
