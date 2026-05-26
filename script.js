@@ -67,13 +67,13 @@ async function send() {
     const user = JSON.parse(localStorage.getItem("user"));
 
     const chat = document.getElementById("chat");
-if (!user)
+if (!user){
 
        
 
         chat.innerHTML += `<div class=aimsg> Please login to use Zoe AI</div>`
         return;
-    
+}
     const input = document.getElementById("messageInput");
     const message = input.value.trim()
     if (!message) return;
