@@ -1,7 +1,6 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("google-login")
 const mode=document.getElementById("modes")
-  const selectedMode = document.getElementById("modes").value;
 
 window.onload = function () {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -100,7 +99,7 @@ if (!user){
      
        body: JSON.stringify({
     message,
-    mode: selectedMode
+    mode: document.getElementById("modes").value
 })
     });
 
