@@ -14,7 +14,8 @@ window.onload = function () {
      }
     google.accounts.id.initialize({
         client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
-        callback: handleCredentialResponse
+        callback: handleCredentialResponse,
+        auto_select= false
     });
 
    google.accounts.id.renderButton(
