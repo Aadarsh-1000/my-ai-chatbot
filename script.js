@@ -40,11 +40,8 @@ async function handleCredentialResponse(response) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-   token: response.credential
+
 })
-})
-    
 
     const data = await res.json();
 
