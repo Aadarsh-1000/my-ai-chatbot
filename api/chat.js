@@ -1,44 +1,50 @@
-import "dotenv/config";
-import "dotenv/config";
-export default async function handler(req, res){
-  const {message} =  req.body 
-  try{
-
-  const ai = await fetch(
-"https://api.groq.com/openai/v1/chat/completions",
-  {
-        method: "POST",
-      headers: {
-  "Content-Type": "application/json",
-  "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
-},
-       body: JSON.stringify({
-  model: "llama-3.3-70b-versatile",
-
-  messages: [
-    {
-      role: "user",
-      content: message
-    }
-    ]
-} )
-      }
-      
-    );
-   
-    const data =await ai.json();
-    console.log(data);
-      res.json({
-reply:
-data?.choices?.[0]?.message?.content
-  });
-}
-catch(error) {
-
-   console.log("FULL ERROR:");
+  import "dotenv/config";
+  import {ChatGroq} from "langchain/groq";
+  import {BufferMemory} from "langchain/memory";
+  import {ConversationChain } from "langchain/chains"
 
 
-   
+  const memoryStore={};
+
+  export default async function handler(req, res){
+
+    try{
+
+  const {message, userId}= req.body;
+  if (!memoryStore[userId]){
+    memoryStore[userId] = new BufferMemory({
+  returnMessages: true,
+  memoryKey:  "history"
+
+    });
+
   }
-}
-  
+
+  const model = new ChatGroq({
+    apiKey: process.env.GROQ_API_KEY,
+    model: "llama-3.3-70b-versatile",
+    temperature: 0.1
+  });
+    const chain = new ConversationChain({
+        llm: model,
+        memory: memoryStore[userId]
+      });
+  const result = await chain.call({
+    input: message
+  });
+
+  result.response
+  res.json({
+    reply: result.response
+  });
+
+
+
+  }
+  catch(error) {
+
+    console.log("FULL ERROR:");
+
+    }
+  }
+    

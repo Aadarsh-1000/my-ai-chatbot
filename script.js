@@ -23,10 +23,11 @@ window.onload = function () {
    google.accounts.id.renderButton(
 document.getElementById("google-login"),
 {
-   theme: "filled_white",
-   size: "large",
-   shape: "circle",
-   width: 200
+    theme: "filled_white",
+size: "large",
+    shape: "circle",
+
+    width: 200
 }
 );
 
@@ -50,7 +51,7 @@ async function handleCredentialResponse(response) {
 
     localStorage.setItem("user", JSON.stringify(data.user));
       if (data.success){
-       window.alert("yoou suck")
+       window.alert("you snooze you lose suckar!!")
        document.getElementById("google-login").style.display= "none";
 
     document.getElementById("logout").style.display="block";
