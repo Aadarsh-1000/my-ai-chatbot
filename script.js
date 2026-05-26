@@ -40,6 +40,7 @@ async function handleCredentialResponse(response) {
         headers: {
             "Content-Type": "application/json"
         },
+        body: JSON.stringify({ token: response.credential })
 
 })
 
@@ -116,9 +117,9 @@ document.addEventListener("keydown", function (event) {
     localStorage.removeItem("user");
      google.accounts.id.disableAutoSelect();
          google.accounts.id.cancel();
- document.getElementById("logout").style.display="block"
+ document.getElementById("logout").style.display="none"
  
-document.getElementById("google-login").style.display="none"
+document.getElementById("google-login").style.display="block"
 
   window.location.reload();
 
