@@ -40,11 +40,11 @@ async function handleCredentialResponse(response) {
         headers: {
             "Content-Type": "application/json"
         },
-    body: JSON.stringify({
-   message,
-   userId: user?.email || "guest"
+        body: JSON.stringify({
+   token: response.credential
 })
-    });
+})
+    
 
     const data = await res.json();
 
