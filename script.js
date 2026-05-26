@@ -62,6 +62,15 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 
 async function send() {
+
+    if (!user){
+         const user = JSON.parse(localStorage.getItem("user"));
+    const chat = document.getElementById("chat");
+        document.getElementById("chat");
+
+        chat.innerHTML += `<div class=aimsg> Please login to use Zoe AI</div>`
+        return;
+    }
     const input = document.getElementById("messageInput");
     const message = input.value.trim()
     if (!message) return;
