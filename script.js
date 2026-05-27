@@ -106,10 +106,11 @@ if (!user){
     const data = await response.json();
 
     
+const aiMsg = document.createElement("div");
+aiMsg.className="aimsg";
+aiMsg.innerHTML = marked.parse(data.reply);
+chat.appendChild(aiMessage);
 
-    chat.innerHTML += `
-<div class="aimsg"> ${data.reply}</div>
-`;
     window.scrollTo({
         top: document.body.scrollHeight,
 

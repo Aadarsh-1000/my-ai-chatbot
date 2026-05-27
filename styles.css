@@ -20,6 +20,18 @@ h1 {
     height: 30px;
     color: black !important;
 }
+pre {
+    background: #111;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+code {
+    font-family: monospace;
+}
 #logout{
     position: fixed;
     bottom: 20px;
