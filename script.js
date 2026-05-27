@@ -110,7 +110,9 @@ const aiMsg = document.createElement("div");
 aiMsg.className="aimsg";
 aiMsg.innerHTML = marked.parse(data.reply);
 chat.appendChild(aiMsg);
- hljs.highlightAll();
+document.querySelectorAll("pre code").forEach((el) => {
+    hljs.highlightElement(el);
+});
 
     window.scrollTo({
         top: document.body.scrollHeight,
