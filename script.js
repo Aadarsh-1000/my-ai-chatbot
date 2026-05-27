@@ -109,7 +109,7 @@ if (!user){
 const aiMsg = document.createElement("div");
 aiMsg.className="aimsg";
 aiMsg.innerHTML = marked.parse(data.reply);
-chat.appendChild(aiMessage);
+chat.appendChild(aiMsg);
 
     window.scrollTo({
         top: document.body.scrollHeight,
