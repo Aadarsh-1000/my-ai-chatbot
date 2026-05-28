@@ -213,6 +213,7 @@ body {
         linear-gradient(90deg, #111214 0%, #0d0e11 45%, #111214 100%);
     
     background-color:#0d0e11;
+    background-size: cover;
 
     display: flex;
     flex-direction: column;
