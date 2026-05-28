@@ -23,7 +23,8 @@ window.onload = function () {
          auto_select: false,
            cancel_on_tap_outside: true,
            context: "signin", 
-            itp_support: true
+            itp_support: true,
+            prompt: "select_account"
     });
     google.accounts.id.renderButton(
         document.getElementById("googlelogin"),
@@ -147,8 +148,8 @@ document.addEventListener("keydown", function (event) {
 
  function logout(){
     localStorage.removeItem("user");
-     google.accounts.id.disableAutoSelect();
-         google.accounts.id.cancel();
+   google.accounts.id.disableAutoSelect(); 
+    google.accounts.id.cancel();
  document.getElementById("logout").style.display="none"
  
 document.getElementById("googlelogin").style.display="block"
