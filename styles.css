@@ -7,7 +7,7 @@ h1 {
     position: fixed;
     background-color: rgba(128, 128, 128, 0.626);
     font-family: "Space Grotesk";
-    padding: 10px 12px;
+    padding: 12px 12px;
     width: 150px;
     color:#e8e6ee;
   letter-spacing: 1px;
@@ -17,16 +17,21 @@ h1 {
 }
 #modes{
     position: fixed;
-    bottom: 100px;
-    width: 200px;   
-    margin-left: 10px;
+    top: 80px;
+    right: 20px;
+     width: min-content;  
+   
+     padding-left:  12px;
+      padding-right:  12px;
+   
     text-align: center;
     font-family: "poppins";
     border-radius: 10px;
-    background-color: white;
+    background-color: rgba(45, 45, 45, 0.401);
     height: 30px;
-    color: black !important;
+    color: rgb(255, 255, 255);
 }
+
 pre {
     background: #111;
     color: white;
@@ -34,6 +39,14 @@ pre {
     border-radius: 12px;
     overflow-x: auto;
     font-family: monospace;
+}
+img{
+    position: fixed;
+    top: 10px;
+}
+.box{
+    display: flex !important;
+
 }
 
 code {
