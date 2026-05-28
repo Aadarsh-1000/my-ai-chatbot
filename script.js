@@ -22,7 +22,8 @@ window.onload = function () {
         callback: handleCredentialResponse,
          auto_select: false,
            cancel_on_tap_outside: true,
-           use_fedcm: false
+           context: "signin", 
+            itp_support: true
     });
 
    
