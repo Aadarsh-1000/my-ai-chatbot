@@ -24,7 +24,9 @@ window.onload = function () {
            cancel_on_tap_outside: true,
            context: "signin", 
             itp_support: true,
-            prompt: "select_account"
+            ux_mode: "redirect",
+            prompt: "select_account",
+            login_uri: window.location.origin + "/landing.html"
     });
     google.accounts.id.renderButton(
         document.getElementById("googlelogin"),
