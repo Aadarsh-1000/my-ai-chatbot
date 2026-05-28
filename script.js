@@ -24,16 +24,7 @@ window.onload = function () {
            cancel_on_tap_outside: true
     });
 
-   google.accounts.id.renderButton(
-document.getElementById("google-login"),
-{
-    theme: "filled_white",
-size: "large",
-    shape: "circle",
-
-    width: 200
-}
-);
+   
 
 };
 
@@ -148,3 +139,8 @@ document.getElementById("googlelogin").style.display="block"
  }
 
 
+function Login(){
+
+    google.accounts.id.prompt();
+
+}
