@@ -24,7 +24,7 @@ window.onload = function () {
            cancel_on_tap_outside: true,
            context: "signin", 
             itp_support: true,
-            ux_mode: "redirect"
+           
     });
     google.accounts.id.renderButton(
         document.getElementById("googlelogin"),
