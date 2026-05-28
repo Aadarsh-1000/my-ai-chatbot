@@ -1,5 +1,5 @@
 const logoutBtn=document.getElementById("logout")
-const googleLogin=document.getElementById("google-login")
+const googleLogin=document.getElementById("googlelogin")
 const mode=document.getElementById("modes")
 
 window.onload = function () {
@@ -7,7 +7,7 @@ window.onload = function () {
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (user){
-        document.getElementById("google-login").style.display="none";
+        document.getElementById("googlelogin").style.display="none";
        
         document.getElementById("logout").style.display="block";
 
@@ -15,7 +15,7 @@ window.onload = function () {
      else{
        
         document.getElementById("logout").style.display="none";
-          document.getElementById("google-login").style.display="block";
+          document.getElementById("googlelogin").style.display="block";
      }
     google.accounts.id.initialize({
           client_id: "1066541156045-her69mn6bh1av8eo2rin0n2o6n0t5c73.apps.googleusercontent.com",
@@ -55,7 +55,7 @@ async function handleCredentialResponse(response) {
     localStorage.setItem("user", JSON.stringify(data.user));
       if (data.success){
       
-       document.getElementById("google-login").style.display= "none";
+       document.getElementById("googlelogin").style.display= "none";
 
     document.getElementById("logout").style.display="block";
  }
@@ -141,8 +141,10 @@ document.addEventListener("keydown", function (event) {
          google.accounts.id.cancel();
  document.getElementById("logout").style.display="none"
  
-document.getElementById("google-login").style.display="block"
+document.getElementById("googlelogin").style.display="block"
 
   window.location.reload();
 
  }
+
+

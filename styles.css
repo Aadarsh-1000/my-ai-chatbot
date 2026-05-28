@@ -1,12 +1,19 @@
 h1 {
     margin: 40px;
+    color: #000000;
     font-family: "Sterion";
 }
-#google-login{
+#googlelogin{
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    border-radius: 25px;
+    background-color: grey;
+    font-family: poppins;
+    padding: 10px 12px;
+    width: fit-content;
+    color:#e8e6ee;
+
+    top: 20px;
+    right: 20px;
+    border-radius: 20px;
 }
 #modes{
     position: fixed;
@@ -94,7 +101,7 @@ code {
 
 /* From Uiverse.io by vinodjangid07 */
 .messageBox {
-    width: fit-content;
+    width: 40%;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
@@ -106,9 +113,9 @@ code {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: rgba(128, 128, 128, 0.437);
     padding: 0 15px;
-    border-radius: 10px;
+    border-radius: 50px;
     border: 1px solid rgb(63, 63, 63);
 }
 
@@ -116,54 +123,7 @@ code {
     border: 1px solid rgb(110, 110, 110);
 }
 
-.fileUploadWrapper {
-    width: fit-content;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-#file {
-    display: none;
-}
-
-.fileUploadWrapper label {
-    cursor: pointer;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.fileUploadWrapper label svg {
-    height: 18px;
-}
-
-.fileUploadWrapper label svg path {
-    transition: all 0.3s;
-}
-
-.fileUploadWrapper label svg circle {
-    transition: all 0.3s;
-}
-
-.fileUploadWrapper label:hover svg path {
-    stroke: #fff;
-}
-
-.fileUploadWrapper label:hover svg circle {
-    stroke: #fff;
-    fill: #3c3c3c;
-}
-
-.fileUploadWrapper label:hover .tooltip {
-    display: block;
-    opacity: 1;
-}
 
 .tooltip {
     position: absolute;
@@ -182,13 +142,14 @@ code {
 }
 
 #messageInput {
-    width: 200px;
+    width: 100%;
     height: 100%;
     background-color: transparent;
     outline: none;
     border: none;
     padding-left: 10px;
-    color: rgb(29, 29, 29);
+    font-family: poppins;
+    color: rgb(255, 255, 255);
 }
 
 #messageInput:focus~#sendButton svg path,
@@ -231,6 +192,15 @@ body {
     width: 100;
     box-sizing: border-box;
   
+
+   
+    background:
+        radial-gradient(circle at bottom left, rgba(120,90,50,0.45), transparent 35%),
+        radial-gradient(circle at top right, rgba(120,90,50,0.35), transparent 30%),
+        linear-gradient(90deg, #111214 0%, #0d0e11 45%, #111214 100%);
+    
+    background-color:#0d0e11;
+
     display: flex;
     flex-direction: column;
     height: 100vh;
