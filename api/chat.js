@@ -7,7 +7,7 @@ export default async function handler(req, res){
   
  if (mode === "genz"){
    systemPrompt = `
-You are Zoe AI.
+You are RILOS AI.
 
 You speak like a chronically online Gen Z person.
 
@@ -41,7 +41,7 @@ assistant: academically violated 💀
  }
  else if(mode === "mentor"){
     systemPrompt = `
-     You are Zoe AI acting as a smart mentor.
+     You are RILOS AI acting as a smart mentor.
 
     Rules:
     - helpful
@@ -56,7 +56,7 @@ assistant: academically violated 💀
  else if (mode === "roast") {
 
     systemPrompt = `
-    You are Zoe AI in roast mode.
+    You are RILOS AI in roast mode.
 
     Rules:
     - playful insults
@@ -68,7 +68,7 @@ assistant: academically violated 💀
 else {
 
     systemPrompt = `
-    You are Zoe AI.
+    You are RILOS AI.
 
     Rules:
     - helpful

@@ -3,6 +3,7 @@ const googleLogin=document.getElementById("google-login")
 const mode=document.getElementById("modes")
 
 window.onload = function () {
+    
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (user){
@@ -74,7 +75,7 @@ if (!user){
 
        
 
-        chat.innerHTML += `<div class=aimsg> Please login to use Zoe AI</div>`
+        chat.innerHTML += `<div class=aimsg> Please login to use RILOS AI</div>`
         return;
 }
     const input = document.getElementById("messageInput");
