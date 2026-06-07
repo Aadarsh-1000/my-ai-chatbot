@@ -76,7 +76,7 @@ code {
     max-width: 75%;
     background: #e8e6ee;
     color: black;
-    padding: 6px 8px;
+    padding: 10px 12px;
     font-family: "poppins";
     border-radius: 16px;
     font-size: 15px;
@@ -94,7 +94,7 @@ code {
     max-width: 75%;
 
 
-    padding: 6px 8px;
+    padding: 10px 12px;
     font-family: "poppins";
     background: linear-gradient(90deg,
             #232334,
