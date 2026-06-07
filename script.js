@@ -142,8 +142,19 @@ localStorage.setItem(
     
 const aiMsg = document.createElement("div");
 aiMsg.className="aimsg";
-aiMsg.innerHTML = marked.parse(data.reply);
+
 chat.appendChild(aiMsg);
+const text= data.reply;
+let i = 0;
+  const typing = setInterval(() => {
+    aiMsg.textContent += text.charAt(i); 
+    i++;
+
+if  (i >=  text.length){
+    clearInterval(typing);
+}
+} , 10);
+
 history.push({
     role: "aimsg",
     content: data.reply
