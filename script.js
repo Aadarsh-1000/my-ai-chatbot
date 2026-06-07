@@ -3,6 +3,8 @@ const googleLogin=document.getElementById("googlelogin")
 const mode=document.getElementById("modes")
 let history = [];
 window.onload = function () {
+
+    localStorage.removeItem("chatHistory");
       
     const user = JSON.parse(localStorage.getItem("user"));
 
