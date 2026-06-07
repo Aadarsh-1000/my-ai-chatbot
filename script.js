@@ -1,7 +1,6 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("googlelogin")
 const mode=document.getElementById("modes")
-let lastMessage = "";
 let history = [];
 window.onload = function () {
 
@@ -91,12 +90,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 async function send() {
 
-   lastMessage= message;
-   function regenerate() {
-     if (!lastMessage) return;
- document.getElementById("messageInput").value = lastMessage;
-     send();
-}
+   
     const user = JSON.parse(localStorage.getItem("user"));
 
      const chat = document.getElementById("chat");
@@ -156,7 +150,7 @@ let i = 0;
     aiMsg.textContent += text.charAt(i); 
     i++;
 
-if  (i >=  text.length){
+if  (i>= text.length){
     clearInterval(typing);
 }
 } , 10);
