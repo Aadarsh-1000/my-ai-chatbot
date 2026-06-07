@@ -202,19 +202,12 @@ code {
 body {
  margin: 0;
     padding: 0;
-    width: 100;
+    width: 100%;
     box-sizing: border-box;
-  
-
-   
-    background:
-        radial-gradient(circle at bottom left, rgba(120,90,50,0.45), transparent 35%),
-        radial-gradient(circle at top right, rgba(120,90,50,0.35), transparent 30%),
-        linear-gradient(90deg, #111214 0%, #0d0e11 45%, #111214 100%);
-    
-    background-color:#0d0e11;
-    background-size: cover;
-
+        background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(141, 80, 6, 0.304), transparent 70%), #000000;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     display: flex;
     flex-direction: column;
     height: 100vh;

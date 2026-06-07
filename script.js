@@ -1,7 +1,7 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("googlelogin")
 const mode=document.getElementById("modes")
-
+let history = JSON.parse(localStorage.getItem("chat-history")) || [];
 window.onload = function () {
       
     const user = JSON.parse(localStorage.getItem("user"));
@@ -41,6 +41,15 @@ window.onload = function () {
             }
         });
     }
+    const chat= document.getElementById("chat");
+     history.forEach(msg =>{
+        chat.innerHTML += `
+        <div class=${msg.role}">
+        ${msg.content}
+        </div>
+        `;
+
+     });
 };
 
    
@@ -97,6 +106,15 @@ if (!user){
     chat.innerHTML += `
 <div class="usermsg"> ${message}</div>
 `;
+history.push({
+    role: "usermsg",
+    content: message
+});
+
+localStorage.setItem(
+    "chatHistory",
+    JSON.stringify(history)
+);
     window.scrollTo({
         top: document.body.scrollHeight,
         behavior: "smooth"
@@ -122,6 +140,19 @@ const aiMsg = document.createElement("div");
 aiMsg.className="aimsg";
 aiMsg.innerHTML = marked.parse(data.reply);
 chat.appendChild(aiMsg);
+history.push({
+    role: "aimsg",
+    content: data.reply
+});
+
+if(history.length > 40){
+    history = history.slice(-40);
+}
+
+localStorage.setItem(
+    "chatHistory",
+    JSON.stringify(history)
+);
 document.querySelectorAll("pre code").forEach((el) => {
     hljs.highlightElement(el);
 });            
