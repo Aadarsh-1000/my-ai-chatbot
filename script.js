@@ -148,6 +148,7 @@ const text= data.reply;
 let i = 0;
   const typing = setInterval(() => {
     aiMsg.textContent += text.charAt(i); 
+    aiMsg.innerHTML = marked.parse(data.reply);
     i++;
 
 if  (i>= text.length){
