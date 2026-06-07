@@ -2,7 +2,7 @@ import "dotenv/config";
 import "dotenv/config";
 
 export default async function handler(req, res){
-  const {message, mode} =  req.body 
+const { message, mode, history } = req.body;
   let systemPrompt = "";
   
  if (mode === "genz"){
@@ -95,6 +95,13 @@ else {
       content: systemPrompt
     }
     ,
+      ...(history || []).map(msg => ({
+      role: msg.role === "usermsg"
+          ? "user"
+          : "assistant",
+      content: msg.content
+  })),
+
     {
       role: "user",
       content: message

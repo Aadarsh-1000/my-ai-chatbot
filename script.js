@@ -1,7 +1,7 @@
 const logoutBtn=document.getElementById("logout")
 const googleLogin=document.getElementById("googlelogin")
 const mode=document.getElementById("modes")
-let history = JSON.parse(localStorage.getItem("chat-history")) || [];
+let history = JSON.parse(localStorage.getItem("chatHistory")) || [];
 window.onload = function () {
       
     const user = JSON.parse(localStorage.getItem("user"));
@@ -44,7 +44,7 @@ window.onload = function () {
     const chat= document.getElementById("chat");
      history.forEach(msg =>{
         chat.innerHTML += `
-        <div class=${msg.role}">
+        <div class="${msg.role}">
         ${msg.content}
         </div>
         `;
@@ -129,7 +129,8 @@ localStorage.setItem(
      
        body: JSON.stringify({
     message,
-    mode: document.getElementById("modes").value
+    mode: document.getElementById("modes").value,
+    history
 })
     });
 
