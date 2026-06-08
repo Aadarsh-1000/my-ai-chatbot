@@ -269,7 +269,7 @@ const circleElement = document.querySelector('.circle');
 const mouse = {x: 0, y: 0},
     circle = {x:0, y:0};
 
-windows.addEventListener('mousemove', e => {
+window.addEventListener('mousemove', e => {
     mouse.x = e.x;
     mouse.y = e.y;
 });
