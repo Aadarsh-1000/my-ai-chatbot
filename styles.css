@@ -15,6 +15,13 @@ h1 {
     right: 10px;
     border-radius: 15px;
 }
+#mic{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
 #modes{
     position: fixed;
     top: 80px;

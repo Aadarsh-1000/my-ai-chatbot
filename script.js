@@ -210,3 +210,18 @@ function Login(){
     google.accounts.id.prompt();
 
 }
+const mic = document.getElementById("mic");
+  mic.onclick = () => {
+const recognition =
+    new webkitSpeechRecognition();
+
+       recognition.start();
+    recognition.onresult = (e) => {
+
+         document.getElementById("messageInput").value =
+
+        e.results[0][0].transcript;
+
+    };
+
+};
