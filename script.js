@@ -36,13 +36,11 @@ window.onload = function () {
 
 
     if (!user) {
-        google.accounts.id.prompt((notification) => {
-            if (notification.isNotDisplayed()) {
-                console.warn("One Tap suppressed by browser:", notification.getNotDisplayedReason());
-            } else if (notification.isSkippedMoment()) {
-                console.warn("One Tap skipped:", notification.getSkippedMomentReason());
-            }
-        });
+       google.accounts.id.prompt((notification) => {
+
+    console.log(notification);
+
+});
     }
     const chat= document.getElementById("chat");
      history.forEach(msg =>{
