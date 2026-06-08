@@ -209,16 +209,58 @@ function Login(){
 
 }
 const mic = document.getElementById("mic");
-  mic.onclick = () => {
-const recognition =
-    new webkitSpeechRecognition();
 
-       recognition.start();
+let recognition;
+let listening = false;
+
+mic.onclick = () => {
+
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Speech Recognition not supported in this browser");
+        return;
+    }
+
+    if (listening) {
+        recognition.stop();
+        listening = false;
+        mic.textContent = "🎙️";
+        return;
+    }
+
+    recognition = new webkitSpeechRecognition();
+
+    recognition.lang = "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    listening = true;
+    mic.textContent = "🔴";
+
+    recognition.start();
+
     recognition.onresult = (e) => {
 
-         document.getElementById("messageInput").value =
+        const transcript = e.results[0][0].transcript;
 
-        e.results[0][0].transcript;
+        document.getElementById("messageInput").value = transcript;
+
+        send();
+
+    };
+
+    recognition.onend = () => {
+
+        listening = false;
+        mic.textContent = "🎤";
+
+    };
+
+    recognition.onerror = (e) => {
+
+        console.log("Speech Error:", e.error);
+
+        listening = false;
+        mic.textContent = "🎤";
 
     };
 
