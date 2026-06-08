@@ -25,9 +25,11 @@ h1 {
       padding-right:  12px;
    
     text-align: center;
+    align-items: center;
+    padding-left: 10px;
     font-family: "poppins";
     border-radius: 10px;
-    background-color: rgba(45, 45, 45, 0.401);
+    background-color: rgba(0, 0, 0, 0.401);
     height: 30px;
     color: rgb(255, 255, 255);
 }

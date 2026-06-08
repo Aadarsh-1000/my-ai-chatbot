@@ -139,7 +139,6 @@ localStorage.setItem(
 
     const data = await response.json();
 
-    
 const aiMsg = document.createElement("div");
 aiMsg.className="aimsg";
 
