@@ -274,7 +274,7 @@ window.addEventListener('mousemove', e => {
     mouse.y = e.clientY;
 });
 
-const speed = 1;
+const speed = 0.2;
 
 const tick = () => {
     circle.x += (mouse.x - circle.x) * speed;
