@@ -30,6 +30,11 @@ I started working on the typing animation for the chat the typing animation was 
 
  <img width="1408" height="513" alt="image" src="https://github.com/user-attachments/assets/b9cd83b9-5748-4653-a9e1-83ab3900cb23" />
 
+### Logo
+I also spent some time designing my logo So that it would look good to match the UI of my chat interface
+<img width="367" height="307" alt="image" src="https://github.com/user-attachments/assets/aff00e27-22ad-4dd2-b316-8ef1fde387af" />
+<img width="1326" height="600" alt="image" src="https://github.com/user-attachments/assets/0c926764-ff2c-47ad-bda8-e50e810b5229" />
+
 
 ### Login and signup
 After this I started working on the login and signup feature. At first I wanted to make a completely custom Google login button so it matched the UI of my website. I thought it would just be a styling change, but it ended up taking a lot of time.I kept getting issues with Google's FedCM  and couldn't figure out what was going wrong. I spent a long time trying different fixes until I finally opened my browser console and started reading the errors properly. After researching for a while, I realized Google auth has to follow a specific route, and making a custom button requires a lot more work than jjust making custom UI so i switched over to the default google login button
