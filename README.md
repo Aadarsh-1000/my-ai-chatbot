@@ -11,7 +11,6 @@
 > I was also expiriencing a lot of issues with login and signup
 
 <img width="1141" height="601" alt="image" src="https://github.com/user-attachments/assets/d6676bbe-976d-4db4-85a0-97977ce474a6" />
-
 I was having issues with the styling of the messgaing and getting the messages to come below one another was a really big hassle.
 I was also expierimenting wiht a lot of differet styling choises fonts, color scheme etc...
 <img width="1333" height="192" alt="image" src="https://github.com/user-attachments/assets/d2990890-416d-4cd1-bb0b-adab96af87b8" />
